@@ -1,0 +1,30 @@
+{
+    "name": "Product Data Scraper",
+    "version": "1.0",
+    "description": "Scrapes product data from e-commerce sites and sends it to a server",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "host_permissions": [
+      "https://www.amazon.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+       "default_popup": "popup.html"
+  },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://www.amazon.com/*"
+        ],
+        "js": ["contentScript.js"]
+      }
+    ],
+    "manifest_version": 3
+  }
+  
